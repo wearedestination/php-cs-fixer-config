@@ -8,12 +8,7 @@ final class Config extends \PhpCsFixer\Config
     {
         parent::__construct('Destination');
 
-        $this->setRiskyAllowed(true);
-    }
-
-    public function getRules()
-    {
-        return [
+        $this->setRules([
             '@Symfony'                      => true,
             '@Symfony:risky'                => true,
             'array_syntax'                  => ['syntax' => 'short'],
@@ -27,6 +22,8 @@ final class Config extends \PhpCsFixer\Config
             'phpdoc_annotation_without_dot' => false,
             'cast_spaces'                   => ['space' => 'none'],
             'native_function_invocation'    => true,
-        ];
+        ]);
+
+        $this->setRiskyAllowed(true);
     }
 }
