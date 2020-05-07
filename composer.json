@@ -1,6 +1,6 @@
 {
     "name": "destination/php-cs-fixer-config",
-    "description": "PHP CS Fixer config for Destination Projects",
+    "description": "PHP-CS-Fixer config for Destination Projects",
     "type": "library",
     "license": "proprietary",
     "authors": [
@@ -16,10 +16,5 @@
         "psr-4": {
             "Destination\\PhpCsFixerConfig\\": "src"
         }
-    },
-    "scripts": {
-        "sniff": "vendor/bin/php-cs-fixer fix -v --dry-run --stop-on-violation --using-cache=no --diff --diff-format=udiff",
-        "fix": "vendor/bin/php-cs-fixer fix --diff",
-        "lint": "find -L src -path src -prune -o -type f -name '*.php' -print0 | xargs -0 -n 1 -P 4 php -l"
     }
 }

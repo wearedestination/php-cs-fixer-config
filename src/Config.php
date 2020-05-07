@@ -21,6 +21,7 @@ final class Config extends \PhpCsFixer\Config
             'phpdoc_inline_tag'             => false,
             'phpdoc_annotation_without_dot' => false,
             'cast_spaces'                   => ['space' => 'none'],
+            'no_superfluous_phpdoc_tags'    => true,
         ]);
 
         $this->setRiskyAllowed(true);
