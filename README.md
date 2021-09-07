@@ -2,9 +2,6 @@
 
 PHP-CS-Fixer config for Destination projects
 
-## Requirements
-* PHP >= 5.6
-
 ## Installation
 
 Use composer to add the package to your dev dependencies:
@@ -25,7 +22,7 @@ Add the following to your composer.json:
 ## Usage
 
 Create a `.php_cs.dist` file in your project's root directory. 
-You can copy a typical config file from this repository if desired:
+You can copy a typical config file from this package if desired:
 
 ```bash
 $ cp vendor/destination/php-cs-fixer-config/.php_cs.dist .
@@ -65,7 +62,7 @@ $ chmod +x .git/hooks/pre-commit
 
 ## Editorconfig
 
-Copy this project's .editorconfig file into your project so your IDE follows some of our standards:
+Copy the .editorconfig file from the package into your project so your IDE follows some of our standards:
 
 ```bash
 $ cp vendor/destination/php-cs-fixer-config/.editorconfig .
