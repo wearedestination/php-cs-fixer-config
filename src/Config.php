@@ -23,6 +23,8 @@ final class Config extends \PhpCsFixer\Config
             'cast_spaces'                   => ['space' => 'none'],
             'no_superfluous_phpdoc_tags'    => true,
             'echo_tag_syntax'               => false,
+            'phpdoc_to_comment'             => false,
+            'global_namespace_import'       => ['import_classes' => false],
         ]);
 
         $this->setRiskyAllowed(true);
