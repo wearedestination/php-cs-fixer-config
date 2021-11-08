@@ -2,6 +2,44 @@
 
 PHP-CS-Fixer config for Destination projects
 
+## Global Usage
+
+### Installation
+
+Install the package globally with composer:
+
+```bash
+composer global require destination/php-cs-fixer-config
+```
+
+Now create a `.php-cs-fixer.dist.php` file within your home directory:
+
+```php
+<?php
+
+$config = new Destination\PhpCsFixerConfig\Config();
+
+$config
+    ->setUsingCache(false)
+    ->setRules(array_merge($config->getRules(), [
+        // Strict types is a sensible default for new projects but is risky on an existing code base
+        'declare_strict_types' => false,
+    ]))
+;
+
+return $config;
+```
+
+### Usage
+
+Assuming your [global composer's bin directory is in your $PATH](https://getcomposer.org/doc/03-cli.md#global), you can now run the following within a directory you want to format:
+
+```
+php-cs-fixer fix --config ~/.php-cs-fixer.dist.php .
+```
+
+## Local Usage
+
 ## Installation
 
 Use composer to add the package to your dev dependencies:
@@ -14,25 +52,25 @@ Add the following to your composer.json:
 
 ```json
 "scripts": {
-    "sniff": "vendor/bin/php-cs-fixer fix -v --dry-run --stop-on-violation --using-cache=no --diff --diff-format=udiff",
+    "sniff": "vendor/bin/php-cs-fixer fix -v --dry-run --stop-on-violation --using-cache=no --diff",
     "fix": "vendor/bin/php-cs-fixer fix --diff",
 }
 ```
 
 ## Usage
 
-Create a `.php_cs.dist` file in your project's root directory. 
+Create a `.php-cs-fixer.dist.php` file in your project's root directory.
 You can copy a typical config file from this package if desired:
 
 ```bash
-$ cp vendor/destination/php-cs-fixer-config/.php_cs.dist .
+$ cp vendor/destination/php-cs-fixer-config/.php-cs-fixer.dist.php .
 ```
 
 Add the following entries to your `.gitignore` file:
 
 ```
-/.php_cs.cache
-/.php_cs
+/.php-cs-fixer.cache
+/.php-cs-fixer.php
 ```
 
 ## Fixing Issues
