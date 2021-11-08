@@ -7,7 +7,7 @@ if [ ! -z "$PHPFILES" ]; then
 
     if [ -x "$PHP_CS_FIXER" ]; then
         echo "Running PHP-CS-Fixer..."
-        $PHP_CS_FIXER fix --config=".php_cs.dist" --using-cache=no $PHPFILES;
+        $PHP_CS_FIXER fix --config .php-cs-fixer-config.dist.php --using-cache no $PHPFILES;
         git add $PHPFILES;
     else
         echo ""
