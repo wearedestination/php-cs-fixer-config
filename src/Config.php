@@ -38,6 +38,7 @@ final class Config extends \PhpCsFixer\Config
                 'import_constants' => false,
                 'import_classes'   => false,
             ],
+            'void_return'                   => true,
         ]);
 
         $this->setRiskyAllowed(true);
