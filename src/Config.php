@@ -43,12 +43,4 @@ final class Config extends \PhpCsFixer\Config
 
         $this->setRiskyAllowed(true);
     }
-
-    public function getFinder(): \PhpCsFixer\Finder
-    {
-        return \PhpCsFixer\Finder::create()
-            ->ignoreDotFiles(false)
-            ->ignoreVCSIgnored(true)
-        ;
-    }
 }
