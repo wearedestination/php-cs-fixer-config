@@ -63,7 +63,7 @@ Create a `.php-cs-fixer.dist.php` file in your project's root directory.
 You can copy a typical config file from this package if desired:
 
 ```bash
-$ cp vendor/destination/php-cs-fixer-config/.php-cs-fixer.dist.php .
+$ cp vendodestination/php-cs-fixer-config/.php-cs-fixer.dist.php .
 ```
 
 Add the following entries to your `.gitignore` file:
@@ -94,7 +94,7 @@ $ composer sniff
 Run the following to have PHP-CS-Fixer run on changed files before every commit:
 
 ```bash
-$ cp vendor/destination/php-cs-fixer-config/git-hooks/pre-commit .git/hooks/pre-commit
+$ cp vendodestination/php-cs-fixer-config/git-hooks/pre-commit .git/hooks/pre-commit
 $ chmod +x .git/hooks/pre-commit
 ```
 
@@ -103,5 +103,5 @@ $ chmod +x .git/hooks/pre-commit
 Copy the .editorconfig file from the package into your project so your IDE follows some of our standards:
 
 ```bash
-$ cp vendor/destination/php-cs-fixer-config/.editorconfig .
+$ cp vendodestination/php-cs-fixer-config/.editorconfig .
 ```
