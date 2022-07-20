@@ -1,27 +1,28 @@
 #!/usr/bin/env bash
 
-PHPFILES=$(git diff --cached --name-only --diff-filter=ACMR "*.php" | sed 's| |\\ |g')
+set -e
 
-if [ ! -z "$PHPFILES" ]; then
-    PHP_CS_FIXER="vendor/bin/php-cs-fixer"
-
-    if [ -x "$PHP_CS_FIXER" ]; then
-        echo "Running PHP-CS-Fixer..."
-        $PHP_CS_FIXER fix --config .php-cs-fixer-config.dist.php --using-cache no $PHPFILES;
-        git add $PHPFILES;
-    else
-        echo ""
-        echo "Please install php-cs-fixer, e.g.:"
-        echo ""
-        echo "  composer require friendsofphp/php-cs-fixer"
-        echo ""
-        exit 1
-    fi
+if [ -f ".git/MERGE_HEAD" ]; then
+  # Don't run when merging
+  exit
 fi
 
-FILES=$(git diff --cached --name-only | sed 's| |\\ |g')
+php_files=$(git diff --cached --name-only --diff-filter=ACMR "*.php" | sed 's| |\\ |g' | grep -Ev 'config/(bundles.php|preload.php|secrets/)' || [[ $? == 1 ]])
 
-if [ -z "$FILES" ]; then
-    echo "No files left to commit after formatting. Aborting"
-    exit 1;
+if [ ! -z "$php_files" ]; then
+  php_cs_fixer="vendor/bin/php-cs-fixer"
+
+  if [ -x "$php_cs_fixer" ]; then
+    echo "Running PHP-CS-Fixer..."
+    docker compose run -T --rm --no-deps php $php_cs_fixer fix --config=".php-cs-fixer.dist.php" --using-cache=no $php_files
+    git add $php_files
+  else
+    echo "\
+
+[ERROR] Commit Failed. Please install dependencies with:
+
+    ./composer install
+        "
+    exit 1
+  fi
 fi

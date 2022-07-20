@@ -52,8 +52,7 @@ Add the following to your composer.json:
 
 ```json
 "scripts": {
-    "sniff": "vendor/bin/php-cs-fixer fix -v --dry-run --stop-on-violation --using-cache=no --diff",
-    "fix": "vendor/bin/php-cs-fixer fix --diff",
+    "fix": "vendor/bin/php-cs-fixer fix --using-cache=no -v",
 }
 ```
 
@@ -83,12 +82,6 @@ To fix issues manually, run the following command:
 $ composer fix
 ```
 
-To perform a dry run, run the following command:
-
-```bash
-$ composer sniff
-```
-
 ### Pre-commit hook
 
 Run the following to have PHP-CS-Fixer run on changed files before every commit:
@@ -103,5 +96,5 @@ $ chmod +x .git/hooks/pre-commit
 Copy the .editorconfig file from the package into your project so your IDE follows some of our standards:
 
 ```bash
-$ cp vendodestination/php-cs-fixer-config/.editorconfig .
+$ cp vendor/destination/php-cs-fixer-config/.editorconfig .
 ```
