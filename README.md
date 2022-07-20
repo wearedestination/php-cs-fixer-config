@@ -87,7 +87,7 @@ $ composer fix
 Run the following to have PHP-CS-Fixer run on changed files before every commit:
 
 ```bash
-$ cp vendodestination/php-cs-fixer-config/git-hooks/pre-commit .git/hooks/pre-commit
+$ cp vendor/destination/php-cs-fixer-config/git-hooks/pre-commit .git/hooks/pre-commit
 $ chmod +x .git/hooks/pre-commit
 ```
 
