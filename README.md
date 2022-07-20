@@ -62,7 +62,7 @@ Create a `.php-cs-fixer.dist.php` file in your project's root directory.
 You can copy a typical config file from this package if desired:
 
 ```bash
-$ cp vendodestination/php-cs-fixer-config/.php-cs-fixer.dist.php .
+$ cp vendor/destination/php-cs-fixer-config/.php-cs-fixer.dist.php .
 ```
 
 Add the following entries to your `.gitignore` file:
