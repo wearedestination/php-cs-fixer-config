@@ -40,6 +40,7 @@ final class Config extends \PhpCsFixer\Config
             ],
             'void_return'                   => true,
             'single_line_throw'             => false,
+            'use_arrow_functions'           => true,
         ]);
 
         $this->setRiskyAllowed(true);
