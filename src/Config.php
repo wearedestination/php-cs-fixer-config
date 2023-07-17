@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Destination\PhpCsFixerConfig;
 
 final class Config extends \PhpCsFixer\Config
@@ -38,9 +40,10 @@ final class Config extends \PhpCsFixer\Config
                 'import_constants' => false,
                 'import_classes'   => false,
             ],
-            'void_return'                   => true,
-            'single_line_throw'             => false,
-            'use_arrow_functions'           => true,
+            'void_return'                                      => true,
+            'single_line_throw'                                => false,
+            'use_arrow_functions'                              => true,
+            'nullable_type_declaration_for_default_null_value' => true,
         ]);
 
         $this->setRiskyAllowed(true);
