@@ -46,8 +46,9 @@ final class Config extends \PhpCsFixer\Config
             'nullable_type_declaration_for_default_null_value' => true,
             'trailing_comma_in_multiline'                      => [
                 'after_heredoc' => false,
-                'elements' => ['arguments', 'arrays', 'match', 'parameters'],
+                'elements'      => ['arguments', 'arrays', 'match', 'parameters'],
             ],
+            'ordered_interfaces' => true,
         ]);
 
         $this->setRiskyAllowed(true);
